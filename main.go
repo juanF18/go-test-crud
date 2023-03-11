@@ -4,10 +4,13 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/juanF18/go-test-crud/db"
 	"github.com/juanF18/go-test-crud/routes"
 )
 
 func main() {
+	//Conexion a base de datos
+	db.DBConnection()
 	//Agrupar distintas URL
 	rutas := mux.NewRouter()
 
