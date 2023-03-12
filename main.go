@@ -1,16 +1,24 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
 	"github.com/juanF18/go-test-crud/db"
+	"github.com/juanF18/go-test-crud/models"
 	"github.com/juanF18/go-test-crud/routes"
 )
 
 func main() {
 	//Conexion a base de datos
 	db.DBConnection()
+
+	err := db.Db.AutoMigrate(models.Category{}, models.Product{}, models.User{})
+	if err != nil {
+		log.Println("Error al migrar")
+	}
+
 	//Agrupar distintas URL
 	rutas := mux.NewRouter()
 
