@@ -20,11 +20,12 @@ func main() {
 	}
 
 	//Agrupar distintas URL
-	rutas := mux.NewRouter()
+	//rutas := mux.NewRouter()
+	var rutas *mux.Router = routes.NewRoutes()
 
 	//Lo que hace que cuando entremos a la pagina inicio nos va a retornar
 	//una funcion
-	rutas.HandleFunc("/", routes.HomeHandler)
+	//rutas.HandleFunc("/", controller.HomeHandler)
 
 	//Inizializa el puerto donde se va a initicial el servidor
 	// y las rutas que va a manejar

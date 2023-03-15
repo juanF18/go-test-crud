@@ -8,7 +8,7 @@ import (
 )
 
 // parametros de conexion a base de datos.
-var DSN = "root:184625Topo*@tcp(127.0.0.1:3306)/demo-products-go?charset=utf8mb4&parseTime=True&loc=Local"
+var DSN = ConfigDb.user + ":" + ConfigDb.password + "@tcp(" + ConfigDb.ip + ")/" + ConfigDb.name_db + "?charset=utf8mb4&parseTime=True&loc=Local"
 var Db *gorm.DB
 
 // Variable base de datos.

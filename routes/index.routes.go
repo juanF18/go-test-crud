@@ -1,8 +1,25 @@
 package routes
 
-import "net/http"
+import (
+	"github.com/gorilla/mux"
+	"github.com/juanF18/go-test-crud/controller"
+)
 
-// Manejo del index
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello word 2!"))
+func NewRoutes() *mux.Router {
+	r := mux.NewRouter()
+	handleRouteHome(r)
+	handleRoutesUser(r)
+	return r
+}
+
+func handleRouteHome(r *mux.Router) {
+	r.HandleFunc("/", controller.HomeHandler)
+}
+
+func handleRoutesUser(r *mux.Router) {
+	r.HandleFunc("/users", controller.GetUsersController).Methods("GET")
+	r.HandleFunc("/users/{id}", controller.GetUserController).Methods("GET")
+	r.HandleFunc("/users", controller.CreateUsersController).Methods("POST")
+	r.HandleFunc("/user/{id}", controller.DeleteUsersController).Methods("DELETE")
+
 }
