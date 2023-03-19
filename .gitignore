@@ -22,4 +22,6 @@ go.work
 tmp
 
 #Config of data base.
-configDb.go
+
+#Enviroment
+.env
