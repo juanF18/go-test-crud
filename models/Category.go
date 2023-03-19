@@ -10,5 +10,5 @@ type Category struct {
 
 	Name        string `gorm:"not null; unique_index"`
 	Description string
-	//Products    []Product
+	Products    []Product `gorm:"foreigKey:CategoryId"`
 }

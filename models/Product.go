@@ -9,5 +9,5 @@ type Product struct {
 	Description string
 	Price       float32 `gorm:"not null"`
 	Amount      uint16  `gorm:"not null"`
-	Categoryid  uint
+	CategoryId  uint
 }
