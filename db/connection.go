@@ -23,6 +23,8 @@ func DBConnection() {
 	Db, err = gorm.Open(mysql.Open(DSN), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
+	} else {
+		log.Println("DB connected")
 	}
 
 }

@@ -13,7 +13,6 @@ func EnvVariable(key string) string {
 	if err != nil {
 		log.Fatalf("Error to load env")
 	}
-	log.Println(os.Getenv(key))
 
 	return os.Getenv(key)
 }

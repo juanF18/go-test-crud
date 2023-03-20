@@ -8,7 +8,7 @@ Modelo de datos.
 type Category struct {
 	gorm.Model
 
-	Name        string `gorm:"not null; unique_index"`
-	Description string
-	Products    []Product `gorm:"foreigKey:CategoryId"`
+	Name        string    `gorm:"not null; unique_index" json:"name"`
+	Description string    `json:"description"`
+	Products    []Product `gorm:"foreigKey:CategoryId" json:"products"`
 }

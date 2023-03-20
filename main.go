@@ -17,10 +17,7 @@ func main() {
 	err := db.Db.AutoMigrate(models.Category{}, models.Product{}, models.User{})
 	if err != nil {
 		log.Println("Error al migrar")
-	} else {
-		log.Println("Migraciones correctas")
 	}
-
 	//Agrupar distintas URL
 	//rutas := mux.NewRouter()
 	var rutas *mux.Router = routes.NewRoutes()
