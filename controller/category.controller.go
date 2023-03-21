@@ -30,6 +30,7 @@ func GetCategoryController(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		w.Write([]byte("User not found"))
 	}
+	db.Db.Model(&category).Association("Products").Find(&category.Products)
 	json.NewEncoder(w).Encode(&category)
 }
 
