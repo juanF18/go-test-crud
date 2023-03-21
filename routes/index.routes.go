@@ -26,10 +26,10 @@ func handleRoutesUser(r *mux.Router) {
 }
 
 func handleRouteProducts(r *mux.Router) {
-	r.HandleFunc("/producs", controller.GetProductsController).Methods("GET")
-	r.HandleFunc("/producs/{id}", controller.GetProductController).Methods("GET")
-	r.HandleFunc("/producs", controller.CreateProductController).Methods("POST")
-	r.HandleFunc("/producs/{id}", controller.DeleteProductController).Methods("DELETE")
+	r.HandleFunc("/product", controller.GetProductsController).Methods("GET")
+	r.HandleFunc("/product/{id}", controller.GetProductController).Methods("GET")
+	r.HandleFunc("/product", controller.CreateProductController).Methods("POST")
+	r.HandleFunc("/product/{id}", controller.DeleteProductController).Methods("DELETE")
 }
 
 func handleRouteCategory(r *mux.Router) {

@@ -67,7 +67,7 @@ func DeleteCategorysController(w http.ResponseWriter, r *http.Request) {
 	db.Db.First(&category, params["id"])
 	if category.ID == 0 {
 		w.WriteHeader(http.StatusNotFound)
-		w.Write([]byte("User not found"))
+		w.Write([]byte("Category not found"))
 		return
 	}
 	db.Db.Delete(&category)
