@@ -28,5 +28,6 @@ func main() {
 
 	//Inizializa el puerto donde se va a initicial el servidor
 	// y las rutas que va a manejar
+	//El servidor esta ecuchando por la ruta 172.0.0.1:5000 que es el localhost
 	http.ListenAndServe("localhost:5000", rutas)
 }

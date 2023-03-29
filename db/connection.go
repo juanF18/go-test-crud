@@ -18,6 +18,9 @@ var Db *gorm.DB
 
 func DBConnection() {
 	// TODO conexion a base de datos a travez del orm gorm
+	/*
+		Aca tambien se maneja los errores de conexion a base de datos.
+	*/
 
 	var err error
 	Db, err = gorm.Open(mysql.Open(DSN), &gorm.Config{})
